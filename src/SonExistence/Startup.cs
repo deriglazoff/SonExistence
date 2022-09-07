@@ -1,4 +1,3 @@
-using Core.AspNetCore.Builder;
 using MassTransit;
 using MassTransit.Definition;
 using Microsoft.AspNetCore.Builder;
@@ -10,7 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Polly;
-using Serilog.Enrichers.Standard.Http;
 using SonExistence.Consumers;
 using SonExistence.Interfaces;
 using SonExistence.Repositories;
@@ -63,8 +61,7 @@ namespace SonExistence
             //services.AddMassTransitHostedService();
 
             services.AddHealthChecks();
-
-            services.AddStandardHttp();
+            
 
             services.AddControllers().AddNewtonsoftJson(o =>
             {
@@ -98,10 +95,6 @@ namespace SonExistence
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{GetType().Namespace} v1");
                 });
             }
-
-            app.UseHttpExceptionHandlerMiddleware();
-
-            app.UseStandardHttpMiddleware();
 
             app.UseRouting();
 

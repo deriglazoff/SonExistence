@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SonExistence.Dto;
 using SonExistence.Interfaces;
@@ -29,5 +30,19 @@ namespace SonExistence.Controllers
         {
             return Ok(new Cry());
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Крик</returns>
+        [HttpGet]
+        [ProducesResponseType(IEnumerable<Child>, StatusCodes.Status200OK)]
+        [ProducesDefaultResponseType(typeof(ProblemDetails))]
+
+        public async Task<IActionResult> Children()
+        {
+            return Ok(new List<Child>());
+        }
+
     }
 }

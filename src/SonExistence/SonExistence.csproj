@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Version>0.1.0-alpha</Version>
+    <Company>Summit</Company>
+    <Authors>letov.ya</Authors>
+    <Product>Son</Product>
+    <PackageTags>Male, 2022</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,9 +34,5 @@
 
   </ItemGroup>
 
-  <PropertyGroup>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NoWarn>$(NoWarn);1591</NoWarn>
-  </PropertyGroup>
 
 </Project>
